@@ -23,10 +23,10 @@ public class DepartmentSort {
                 if (res != 0) {
                     res = -res;
 
-                    if (o1.indexOf(o2) == 0 ) {
+                    if (o1.indexOf(o2) == 0) {
                         res = 1;
                     }
-                    if (o2.indexOf(o1) == 0 ) {
+                    if (o2.indexOf(o1) == 0) {
                         res = -1;
                     }
 
@@ -38,7 +38,7 @@ public class DepartmentSort {
         return createFullHierarchy(new TreeSet<>(comparatorDesc));
     }
 
-    private String[] createFullHierarchy (Set<String> hierarchy) {
+    private String[] createFullHierarchy(Set<String> hierarchy) {
         for (String currentCode : deparmentCode) {
             String[] currentHierarchy = appendAllCodes(currentCode);
             for (String fullCode : currentHierarchy) {
@@ -49,7 +49,7 @@ public class DepartmentSort {
         return hierarchy.toArray(new String[0]);
     }
 
-    private String[] appendAllCodes (String anyDeparmentCode) {
+    private String[] appendAllCodes(String anyDeparmentCode) {
         String separator = "\\\\";
         String[] splitCodes = anyDeparmentCode.split(separator);
         String[] allDepartmentCode = new String[splitCodes.length];
